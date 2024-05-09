@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap");
+*{   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+   
+}
+
+::selection{
+    background-color: rgb(11, 97, 11,0.5);
+}
+
+.parallax{
+    pointer-events: none;
+    transition: 0.38s cubic-bezier(.2,.49,.32,.99)
+}
+
+header{
+     width: 100%;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+     /* background-color: rgb(8, 49, 8); */
+     position: absolute;
+     z-index: 999;
+     
+}
+html{
+    overflow-x: hidden;
+}
+.logo{
+    width: 100px;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 10vh;
+  max-width: 1400px;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 18px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: aliceblue;
+    font-size: 1.2rem;
+    font-weight: 300;
+    pointer-events: auto;
+}
+
+.search{
+    padding: 0 3rem;
+}
+
+main{
+    height: 100vh;
+    /* background-color: #353; */
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.hamburger{
+    display: none;
+}
+
+
+/* images positions */
+
+.bg-img{
+    position: absolute;
+    width: 2800px;
+    top: calc(50% - 390px);
+    left: calc(50% + 10px);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.fog-7{
+    z-index: 2;
+    position: absolute;
+    width: 1800px;
+    top: calc(50% - 100px);
+    left: calc(50% + 300px);
+    transform: translate(-50%, -50%);
+}
+
+.mount-10 {
+    z-index: 3;
+    position: absolute;
+    width: 892px;
+    top: calc(50% + 69px);
+    left: calc(50% + 230px);
+    transform: translate(-50%, -50%);
+}
+
+.fog-6 {
+    z-index: 4;
+    position: absolute;
+    width: 1610px;
+    top: calc(50% + 85px);
+    left: calc(50% + 10px);
+    transform: translate(-50%, -50%);
+}
+
+.mount-9 {
+    z-index: 5;
+    position: absolute;
+    width: 470px;
+    top: calc(50% + 113px);
+    left: calc(50% - 457px);
+    transform: translate(-50%, -50%);
+}
+
+.mount-8 {
+    z-index: 6;
+    position: absolute;
+    width: 810px;
+    top: calc(50% + 86px);
+    left: calc(50% - 202px);
+    transform: translate(-50%, -50%);
+}
+
+.fog-5 {
+    z-index: 7;
+    position: absolute;
+    width: 450px;
+    top: calc(50% + 160px);
+    left: calc(50% + 20px);
+    transform: translate(-50%, -50%);
+}
+
+.mount-7 {
+    z-index: 8;
+    position: absolute;
+    width: 538px;
+    top: calc(50% + 123px);
+    left: calc(50% + 305px);
+    transform: translate(-50%, -50%);
+}
+
+
+.text{
+    position: absolute;
+    z-index: 9;
+    top: calc(50% - 153px);
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: text;
+    pointer-events: auto;
+    /* overflow: hidden; */
+}
+
+
+.text h2{
+    font-weight: 100;
+    font-size: 6.5rem;
+   
+    
+}
+.text h1{
+    font-weight: 800;
+    font-size: 8rem;
+    line-height: 0.88;
+    
+}
+
+.mount-6{
+    position: absolute;
+    z-index: 10;
+    top: calc(50% + 60px);
+    left: calc(50% + 590px);
+    width: 408px;
+    transform: translate(-50%,-50%);
+}
+.fog-4{
+    position: absolute;
+    z-index: 14;
+    width: 780px;
+    top: calc(50% + 229px);
+    left: calc(50% - 358.5px);
+    transform: translate(-50%, -50%);
+}
+
+.mount-5{
+    position: absolute;
+    z-index: 12;
+    width: 538px;
+    top: calc(50% + 250px);
+    left: calc(50% + 130px);
+    transform: translate(-50%,-50%);
+}
+
+.fog-3{
+    position: absolute;
+    z-index: 13;
+    width: 1600px;
+    top: calc(50% + 110px);
+    left: calc(50% - 15px);
+    transform: translate(-50%,-50%);
+}
+
+.mount-4{
+    position: absolute;
+    z-index: 14;
+    width: 780px;
+    top: calc(50% + 196px);
+    left: calc(50% - 391.5px);
+    transform: translate(-50%,-50%);
+}
+
+
+
+.mount-1{
+    position: absolute;
+    z-index: 18;
+    width: 530px;
+    top: calc(50% + 17px);
+    left: calc(50% - 634px);
+    transform: translate(-50%,-50%);
+}
+.mount-2{
+    position: absolute;
+    z-index: 14;
+    width: 626px;
+    top: calc(50% + 143px);
+    left: calc(50% + 365px);
+    transform: translate(-50%, -50%);
+}
+.mount-3{
+    position: absolute;
+    z-index: 15;
+    width: 423px;
+    top: calc(50% + 128px);
+    left: calc(50% + 702px);
+    transform: translate(-50%, -50%);
+}
+
+
+.sun-rays{
+    position: absolute;
+    z-index: 19;
+    top: 0;
+    right: 0;
+    width: 595px;
+    pointer-events: none;
+}
+
+.black-shadow{
+    position: absolute;
+    z-index: 20;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.fog-1{
+    position: absolute;
+    z-index: 22;
+    width: 1600px;
+    top: calc(100% - 355px);
+    left: 550%;
+    transform: translate(-50%, -50%);
+}
+
+
+.vignette{
+    z-index: 100;
+    /* background-color: aqua; */
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 65%,rgba(0,0,0,0.7));
+}
+
+
+@media screen and (max-width: 428px) {
+    body{
+        overflow-x: hidden;
+    }
+    main {
+        overflow-x: hidden;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+    .logo {
+        width: 60px; /* Adjust as needed */
+    }
+    nav{
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 10px;
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem; /* Adjust as needed */
+        color: black;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    .text h1 {
+        font-weight: 800;
+        font-size: 5rem;
+        line-height: 0.88;
+        white-space: nowrap; /* Ensure text stays on a single line */
+    }
+    .logo {
+        width: 60px;
+        margin-left: 42%;
+    }
+    
+}
+
+

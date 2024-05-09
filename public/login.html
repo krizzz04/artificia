@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="./login.css">
+  
+</head>
+<body class="align"  >
+  <div class="grid">
+    <form action="#" method="POST" class="form login" id="login-form">
+      <div class="form__field">
+        <label for="login__username"  alt=""><span class="hidden">Username</span></label>
+        <input id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
+      </div>
+      <div class="form__field">
+        <label for="login__password"><span class="hidden">Password</span></label>
+        <input id="login__password" type="password" name="password" class="form__input" placeholder="Passdword" required>
+      </div>
+      <div class="form__field">
+        <input type="submit" value="Sign In">
+      </div>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        $('#login-form').submit(async function (event) {
+          event.preventDefault();
+
+          const formData = new FormData(this);
+          const requestData = JSON.stringify(Object.fromEntries(formData));
+
+          try {
+            const response = await fetch('http://localhost:5000/signin', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: requestData,
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+              window.location.href = result.redirect || '/'; // Redirect to index.html or root if not specified
+            } else {
+              alert('Login failed. Please check your credentials.');
+            }
+          } catch (error) {
+            console.error('Error during login:', error.message);
+          }
+        });
+      });
+    </script>
+     
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="ui.js"></script>
+</body>
+</html>
