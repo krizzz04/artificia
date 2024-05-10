@@ -24,7 +24,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
   console.log('Connected to MongoDB');
 });
-console.log("done")
+console.log("hi")
 // Define a schema for student marks
 const marksSchema = new mongoose.Schema({
   username: String,
@@ -117,7 +117,7 @@ app.get('/fetch-marks', async (req, res) => {
   const email = req.query.email;
   if (!username) {
     // If no username is provided, serve the fetch.html file
-    res.sendFile(path.join(__dirname, 'public','fetch.html'));
+    res.sendFile(path.join(__dirname, '/fetch.html'));
     return;
   }
 
@@ -363,7 +363,7 @@ function authenticateToken(req, res, next) {
 
 // Use the authenticateToken middleware for the /admin route
 app.get('/admin', authenticateToken, (req, res) => {
-  res.sendFile(path.join(__dirname, 'public','admin.html'));
+  res.sendFile(path.join(__dirname, 'admin.html'));
 });
 
 
