@@ -117,7 +117,7 @@ app.get('/fetch-marks', async (req, res) => {
   const email = req.query.email;
   if (!username) {
     // If no username is provided, serve the fetch.html file
-    res.sendFile(path.join(__dirname, 'public/fetch.html'));
+    res.sendFile(path.join(__dirname, 'public','fetch.html'));
     return;
   }
 
