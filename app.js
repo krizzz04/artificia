@@ -112,7 +112,7 @@ const Marks = mongoose.model('Marks', marksSchema, 'students');
 app.use(express.static('public'));
 
 // Route to serve the fetch.html file and fetch student marks
-app.get('/artificia-delta.vercel.app/fetch-marks', async (req, res) => {
+app.get('/fetch-marks', async (req, res) => {
   const username = req.query.username;
   const email = req.query.email;
   if (!username) {
