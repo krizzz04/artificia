@@ -363,7 +363,7 @@ function authenticateToken(req, res, next) {
 
 // Use the authenticateToken middleware for the /admin route
 app.get('/admin', authenticateToken, (req, res) => {
-  res.sendFile(path.join(__dirname, 'admin.html'));
+  res.sendFile(path.join(__dirname, 'public','admin.html'));
 });
 
 
