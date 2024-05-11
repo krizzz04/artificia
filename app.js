@@ -447,7 +447,7 @@ app.post('/signin', async (req, res) => {
 
 
 app.all('*',(req,res) =>{
-  res.status(404).sendFile(path.join(__dirname,'public','404.html'))
+  res.status(404).sendFile(path.join(__dirname,'public','login.html'))
 })
 
 
