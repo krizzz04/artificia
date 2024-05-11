@@ -2,7 +2,7 @@
   "name": "cyber-nauts",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "./app.js",
   "engines": {
     "node": "14.x"
   },
