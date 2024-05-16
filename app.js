@@ -183,7 +183,7 @@ app.get('/fetch-marks', async (req, res) => {
                     <span class="material-icons-sharp">today</span>
                     <h3>Time Table</h3>
                 </a> 
-                <a href="#">
+                <a href="/">
                     <span class="material-icons-sharp" onclick="" href="logout">logout</span>
                     <h3>Logout</h3>
                 </a>
