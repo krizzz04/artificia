@@ -29,6 +29,7 @@ console.log("hi")
 const marksSchema = new mongoose.Schema({
   username: String,
   email: String,
+  name: String,
   subjects: {
     aiml: {
       ia1: {
@@ -114,6 +115,7 @@ app.use(express.static('public'));
 // Route to serve the fetch.html file and fetch student marks
 app.get('/fetch-marks', async (req, res) => {
   const username = req.query.username;
+  const name = await Marks.findOne({  });
   const email = req.query.email;
   if (!username) {
     // If no username is provided, serve the fetch.html file
@@ -121,14 +123,23 @@ app.get('/fetch-marks', async (req, res) => {
     return;
   }
 
-  console.log('Username:', username); // Log the username received from the request
   try {
-    const studentMarks = await Marks.findOne({ username });
-    console.log('Student marks:', studentMarks); // Log the student marks retrieved from the database
+    const studentMarks = await Marks.findOne({ username }); // Find the document by username
+
     if (!studentMarks) {
       res.status(404).send('Student not found');
       return;
     }
+
+    // Extract the name from the studentMarks document
+    const { name, email } = studentMarks;
+
+    // Log retrieved student data
+    console.log('Student data:', {
+      username: studentMarks.username,
+      name: studentMarks.name,
+      email: studentMarks.email
+    });
 
     // Send the student's marks as HTML response
     res.send(` 
@@ -179,10 +190,7 @@ app.get('/fetch-marks', async (req, res) => {
                     <span class="material-icons-sharp">home</span>
                     <h3>Home</h3>
                 </a>
-                <a href="timetable.html" onclick="timeTableAll()">
-                    <span class="material-icons-sharp">today</span>
-                    <h3>Time Table</h3>
-                </a> 
+                
                 <a href="/">
                     <span class="material-icons-sharp" onclick="" href="logout">logout</span>
                     <h3>Logout</h3>
@@ -206,14 +214,14 @@ app.get('/fetch-marks', async (req, res) => {
                         </div>
                         <div class="info">
                             <p>Hey, <b id="pname"></b> </p>
-                            <small class="text-muted">${username}</small>
+                            <small class="text-muted"><b>${name}</b></small>
                         </div>
                     </div>
                     <div class="about">
                         <h5>Course</h5>
                         <p>BTech. Computer Science & Engineering</p>
                         <h5>Email</h5>
-                        <p>exam@gmail.com</P>
+                        <p><b>${email}</b></P>
                         
                     </div>
                 </div>
@@ -459,3 +467,9 @@ app.all('*',(req,res) =>{
 app.listen(5000, () => {
   console.log('Server running on http://localhost:5000');
 });
+
+
+{/* <a href="timetable.html" onclick="timeTableAll()">
+                    <span class="material-icons-sharp">today</span>
+                    <h3>Time Table</h3>
+                </a>  */}
