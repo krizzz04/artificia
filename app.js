@@ -422,7 +422,7 @@ app.all('*',(req,res) =>{
 
 
 // Start the server
-app.listen(80, () => {
+app.listen(5000, () => {
   console.log('Server running on http://localhost:5000');
 });
 
